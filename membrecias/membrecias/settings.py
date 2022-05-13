@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'preventconcurrentlogins',
     'django_inlinecss', 
-    'django_crontab',
+    #'django_crontab',
     'import_export',
    
 ]
