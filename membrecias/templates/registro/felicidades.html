@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+{%endblock%}
+
+{%block body%}
+<style>
+h2{
+    text-align: center;
+    color: purple;
+}
+
+h4 , h3, p{
+    text-align: center;
+}
+
+.especialidad .bb {
+  display: inline-block;
+  width: 100px;
+  
+  padding: 5px;
+ 
+}
+
+.especialidad{
+    width: 80%;
+    margin-left: 10%;
+    
+}
+
+</style>
+
+<h2>
+    Felicidades {{nombres}} {{apellidos}} Ahora Puede Disfrutar de los Beneficios de MEDIRED
+</h2>
+
+<br>
+
+<h3>Llegamos a Punta Cana Village</h3>
+
+<h4>        Ven y conoce nuestra nueva sucursal en la plaza Mare Blu Punta cana</h4>
+<h4>Contamos con especialistas en el área de:</h4>
+
+<div class="especialidad">
+
+    <div class="bb">
+        <p> <b> - Ginecología  - </b> </p>
+        <p> <b> - Pediatría  </b> </p>
+        <p> <b> - Medicina Interna  </b> </p>
+        <p> <b> - Cardiología </b> </p>
+        <p> <b> - Hematología  </b> </p>
+    </div>
+
+    <div class="bb">
+        <p> <b> - Medicina Familiar </b> </p>
+        <p> <b> - Cirujano  </b> </p>
+        <p> <b> - Otorrino  </b> </p>
+        <p> <b> - Psicología </b> </p>
+        <p> <b> - Nefrología  </b> </p>
+    </div>
+
+    <div class="bb">
+        <p> <b> - Ortopedia </b> </p>
+        <p> <b> - Gastroenterología  </b> </p>
+        <p> <b> - Nutrición  </b> </p>
+        <p> <b> - Neumología </b> </p>
+        
+    </div>
+
+    <a class="navbar-brand" href="{% url 'home' %}"><img src=" {% static 'img/LOGO_IMG.JPG' %}  " alt="" width="200px" style="border-radius: 15px;"></a>
+
+</div>
+
+
+
+{%endblock%}

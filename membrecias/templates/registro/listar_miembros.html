@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body%}
+
+<style>
+   th, td{
+        text-align: center;
+    }
+    .estadistica-pacientes{
+      width: 400px;
+      float: left;
+      padding: 15px;
+      border-radius: 25px;
+      margin-left: 30px;
+      margin-top: 100px;
+      background-color: #E5EEEE;
+    }
+    input{
+      border: none;
+    }
+    a{
+      color: gray;
+    }
+
+    input{
+      text-align: center;
+    }
+</style>
+
+
+<br>
+<form action="" method="post">
+  {% csrf_token %}
+
+<div class="container" data-aos="fade-left" data-aos-duration="2000">
+  <div class="row">
+    <div class="col-lg-4">
+      <textarea name="mensaje" id="" cols="30" rows="2" class="form-control" placeholder="Escrcriba contenido del mensaje"></textarea>
+    </div>
+    <div class="col-4"><button type="submit" class="btn btn-warning">Enviar Correo</button></div>
+
+    <div class="col4-"> <a href="  {% url 'export' %} " class="btn btn-info">Exportar Miembros <i class="fa-solid fa-file-export"></i></a></div>
+  </div>
+  <hr>
+</div>
+
+<br>
+  <table class="table table-sm" data-aos="fade-left" data-aos-duration="3000">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        
+        <th scope="col">
+
+          <div class="dropdown show">
+            <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <b> Sexo </b>
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="{% url 'masculino'%} ">Masculino</a>
+              <a class="dropdown-item" href="{% url 'femenino'%}">Femenino</a>
+              <a class="dropdown-item" href="{% url 'otro'%}">Otro</a>
+              <a class="dropdown-item" href="{% url 'miembros'%}">Todos</a>
+            </div>
+          </div>
+
+        </th>
+
+        <th scope="col">Documento</th>
+        <th scope="col">
+          <div class="dropdown show">
+            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <b>Filtrar Edad</b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Menores de Edad</a>
+              <a class="dropdown-item" href="#">Mayor 18 Menor de 60</a>
+              <a class="dropdown-item" href="#">Mayor a 60</a>
+            </div>
+          </div>
+        </th>
+        
+        <th scope="col">
+          <div class="dropdown show">
+            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <b>Nacionalidad</b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href=" {%  url 'dominicanos' %} ">Dominicana</a>
+              <a class="dropdown-item" href=" {% url 'extranjeros' %} ">Extranjera</a>
+            </div>
+          </div>
+        </th>
+
+        <th scope="col">
+          <div class="dropdown show">
+            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <b>Ciudad</b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href=" {% url 'puntacana' %} ">Punta Cana</a>
+              <a class="dropdown-item" href=" {% url 'bavaro' %} ">Bavaro</a>
+              <a class="dropdown-item" href=" {% url 'altagracia' %} ">La Altagracia</a>
+              <a class="dropdown-item" href=" {% url 'seibo' %} ">El Seibo</a>
+              <a class="dropdown-item" href=" {% url 'romana' %} ">Romana</a>
+              <a class="dropdown-item" href=" {% url 'sanpedro' %} ">San Pedro</a>
+              <a class="dropdown-item" href=" {% url 'hatomayor' %} ">Hato Mayor</a>
+              <a class="dropdown-item" href=" {% url 'santodomingo' %} ">Santo Domingo</a>
+              <a class="dropdown-item" href=" {% url 'miembros' %} ">Todas</a>
+            </div>
+          </div>
+        </th>
+       
+        <th scope="col">Telefono</th>
+        <th scope="col">Edad</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for usuario in registrados %}
+      <tr>
+        <th scope="row"> {{usuario.id}}</th>
+        <td>  <input type="email" name="username" id="" value="{{usuario.username}}" readonly > </td>
+        <td> {{usuario.nombres}}</td>
+        <td>{{usuario.apellidos}}</td>
+        <td>{{usuario.sexo}}</td>
+        <td>{{usuario.documento}}</td>
+        <td>{{usuario.fecha_nacimiento  | date:'d-m-Y'}}</td> 
+        <td>{{usuario.nacionalidad}}</td> 
+        <td>{{usuario.ciudad}}</td> 
+        <td>{{usuario.telefono}}</td> 
+        <form action="" method="post">
+        <td> <input type="number" name="edades" id="" readonly value="{{usuario.calcular_edad}}" class="edades">   </td>
+
+     
+      </tr>
+      {%endfor%}
+
+      <button type="submit">jjj</button>
+    </form>
+    </tbody>
+  </table>
+</form>
+
+  <div class="container estadistica-pacientes card bg-light" data-aos="fade-left" data-aos-duration="4000">
+    <span>Pacientes Masculinos</span>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: {{ masculinos_porciento}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ masculinos_porciento}} %</div>
+    </div>
+
+<br>
+<span>Pacientes Femenino</span>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: {{ femenino_porciento}}%; background-color:#ffcad4" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ femenino_porciento}} %</div>
+</div>
+
+<br>
+<span>Pacientes Sin Especificar</span>
+<div class="progress">
+  <div class="progress-bar bg-info" role="progressbar" style="width: {{ otro_porciento}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{ otro_porciento}} %</div>
+</div>
+
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+
+document.addEventListener('DOMContentLoaded', (load) => {
+  let edad = document.getElementsByClassName("edades")
+    for (i in edad){
+      console.log(i)
+    }
+  
+
+
+});
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{%endblock%}

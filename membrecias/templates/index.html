@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block css%}
+<link rel="stylesheet" href=" {% static 'css/index.css' %} ">
+{%endblock%}
+
+
+{%block js%}
+<script src="  {% static 'js/index.js' %} "> </script>
+{%endblock%}
+
+{%block body%}
+<style>
+
+</style>
+<div class="container">
+    <h1 class="h1-titular"> Conoce Nuestro Programa Socios </h1>
+    <hr>
+</div>
+
+<section class="container img-socio">
+
+    <img src=" {% static 'img/socios.jpg' %}  " alt="" class=""  data-aos="fade-left" data-aos-duration="3000">
+
+    <div class="row">
+        <div class="col-lg-4 col-sm-12 main-carru">
+            <img src=" {% static 'img/bene.jpg' %}  " alt="" class=""  data-aos="fade-left" data-aos-duration="1000">
+            <br>
+            <p class="p-index"><a href=" {%url 'beneficios' %} ">Beneficios</a></p>
+
+        </div>
+
+        <div class="col-lg-4 col-sm-12 main-carru">
+            <img src=" {% static 'img/cober.jpg' %}  " alt="" class=""  data-aos="fade-left" data-aos-duration="2000">
+            <br>
+            <p class="p-index"><a href=" {%url 'requisitos' %} ">Requisitos</a></p>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-12 main-carru">
+            <img src=" {% static 'img/cobertura.jpg' %}  " alt="" class=""  data-aos="fade-left" data-aos-duration="3000">
+            <br>
+            <p class="p-index"><a href=" {%url 'cobertura' %} ">Cobertura</a></p>
+        </div>
+
+        <!-- <div class="col-lg-4 col-sm-12main-carru">
+                <img src=" {% static 'img/cobertura.jpg' %}  " alt="" class="">
+            </div>-->
+    </div>
+
+    <br><br><br>
+</section>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  AOS.init();
+</script>
+
+{%endblock%}

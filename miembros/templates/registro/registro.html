@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{%block body%}
+
+
+<div class="container">
+<br><br>
+    <h4>Formulario de Registro</h2>
+
+    <br>
+    <form action="" method="post" >
+        {% csrf_token %}
+    
+
+        {%  for field in form %}
+        <div class="form-group">
+
+            {{field.label_tag}}
+            {{field}}
+
+                
+
+            {{field.errors}}
+
+            {% endif %}
+
+            {%endfor%}
+
+          
+
+        </div>
+        
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{%endblock%}
+
+
+
+<style>
+    .container{
+        display: block;
+        margin: 0px auto;
+        
+        border-radius: 20px;
+    }
+    
+    label{
+        margin-top: 5px;
+    }
+    .btn{
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .row{
+        margin-top: 20px;
+    }
+    
+    .reg-info{
+        background-color: #a7d6dc;
+        border-radius: 20px;
+    }
+    
+    .col-docreg  img{
+        border-radius: 15px;
+    }
+    .h4-reg{
+        text-align: center;
+        color: gray;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-size: 18px;
+    }
+    </style>
+    
+    <div class="row ">
+    
+    
+    
+    <div class="col-lg-6 col-docreg">
+    <img src=" {% static 'img/familia.webp' %} " alt="" width="100%" height="100%">
+    </div>
+    
+    
+    <div class="col-lg-6 reg-info">
+    <p class="h4-reg"> ¡Regístrate y comienza a vivir la experiencia de los puntos de MEDIRED! </p>
+    <hr>
+    
+    
+    
+    <!--
+    <form action=" {%url 'registrar' %}  " enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+    <label for="">Correo:</label><input type="email" name="username"> <br>
+    <label for="">Nombres:</label><input type="text" name="nombres">  <br>
+    <label for="">Apellidos:</label><input type="text" name="apellidos">  <br>
+    
+    <label for="">Sexo</label>
+    <select name="sexo" id="">
+        <option value="" disabled selected>Seco</option>
+        <option value="Masculino" >Masculino</option>
+    </select> <br>
+    
+    <label for="">Documento:</label><input type="number" name="documento">  <br>
+    
+    <label for="">Nacionalidad</label>
+    <select name="nacionalidad" id="">
+        <option value="" disabled selected>Nacionalidad</option>
+        <option value="Dominicana" >La Romana</option>
+    </select> <br>
+    
+    
+    <label for="">Ciudad</label>
+    
+    <select name="ciudad" id="">
+        <option value="" disabled selected>Ciudad</option>
+        <option value="La Romana" >La Romana</option>
+    </select>
+    <br>
+    
+    <label for="">Fecha de Nacimiento</label>
+    <input type="date" name="fecha_nacimiento" id="">
+    
+    
+    
+    
+    <div class="col-2"> <button type="submit" class="btn btn-primary">Guardar <i class="fa-solid fa-floppy-disk"></i> </button>  </div> 
+    </form>
+    -->
+    
+    
+        <form action="" method="post" hidden>
+            <div class="container">
+            {% csrf_token %}
+    
+    
+    
+       
+       <!--
+      <div class="col-12" >    <label for="">Correo:</label>  {{user.username}}  <a href=""></a> </div>
+       -->
+       <div class="col-12">  <label for="">Correo</label> <input type="email" name="username" class="form-control">  </div>
+        <div class="col-12">  <label for="">Nombres</label> {{user.nombres}}  </div>
+        <div class="col-12">     <label for="">Apellidos</label>  {{user.apellidos}}  </div>
+        <div class="col-12">  <label for="">Documento</label>  {{user.documento}}  </div>
+        <div class="col-12" >    <label for="">Ciudad</label> {{user.ciudad}}  <a href=""></a> </div>
+        <div class="col-12">  <label for="">Nacionalidad</label>  {{user.nacionalidad}}  </div>
+       
+        <div class="col-12">   <label for=""> Fecha de Nacimiento </label>  {{user.fecha_nacimiento}}  </div>
+        <div class="col-12">  <label for="">Sexo</label> {{user.sexo}}  </div>
+        <div class="col-12">  <label for="">Password</label>  {{user.password}}  </div>
+        <div class="col-12">  <label for="">Imagen</label> {{user.imagen}}  </div>
+    
+        <br> <br>
+        <div class="row">
+            <div class="col-2"> <button type="submit" class="btn btn-primary">Guardar <i class="fa-solid fa-floppy-disk"></i> </button>  </div> 
+            <div class="col-2"> <a href="#" class="btn">Olvide mi Contraseña</a>  </div> 
+        </div>
+      
+    
+        <br>
+    </div>
+    </form>
+    
+    </div>
+    
+    </div>
+    

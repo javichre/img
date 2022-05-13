@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{%block body%}
+<style>
+    h2, h5{
+        color: gray;
+        text-align: center;
+    }
+    .container{
+        margin-top: 100px;
+    }
+    .btn{
+        background-color: #1A3066;
+        color: white;
+    }
+    .row{
+        margin-top: 100px;
+    }
+    h3{
+        text-align: center;
+        margin-top: 50px;
+        color: gray;
+    }
+
+    p{
+        display: block;
+    margin: 0px auto;
+    text-align: center;
+    }
+
+    .fa-facebook-square{
+        color:#1A3066;
+        font-size: 30px;
+        border-radius: 15px;
+    }
+
+    .fa-youtube{
+        color: red;
+        font-size: 30px;
+    }
+
+    .fa-instagram-square{
+        color: #FFAFAF ;
+        font-size: 30px;
+        border-radius: 30px;
+    }
+
+    .fa-whatsapp{
+        font-size: 30px;
+        color: #3DEF58;
+    }
+
+   
+</style>
+<div class="container">
+
+    <h2>  <b>Felicitaciones {{mail}}  </b> </h2>
+    <h5>Su Registro se ha Compleatdo Exitosamente, Ahora Puede Disfrutar de los Beneficios</h5>
+
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4"><a href=" {% url 'registrar' %} " class="btn ">Registre otra Personas</a></div>
+        <div class="col-2"></div>
+        <div class="col-4"><a href="  {% url 'login' %} " class="btn ">Inicio de Sesion</a></div>
+    </div>
+
+    <h3>Siguenos en nuestras redes sociales</h3>
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"><a href=""><i class="fa-brands fa-facebook-square"></i></a> </div>
+        <div class="col-lg-2"><a href=""> <i class="fa-brands fa-youtube"></i></a> </div>
+        <div class="col-lg-2"> <a href=""> <i class="fa-brands fa-instagram-square"></i></a> </div>
+        <div class="col-lg-2"><p> <a href="">  <i class="fa-brands fa-whatsapp"></i>  </a> </div>
+    </div>
+</div>
+{%endblock%}

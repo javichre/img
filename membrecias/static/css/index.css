@@ -1,0 +1,56 @@
+body{
+   margin: 0;
+   padding: 0;
+   background-color: white;
+}
+
+.h1-titular{
+    margin-top: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+
+.img-socio img{
+    border-radius: 15px;
+    display: block;
+    margin: 0px auto;
+    opacity: 0.7;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.img-socio span{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+   
+
+}
+
+.main-carru img{
+    width: 80%;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.p-index{
+    text-align: center;
+    color: gray;
+}
+.p-index a{
+    text-align: center;
+    color: gray;
+}
+
+.p-index:hover a{
+    background-color: #0064C7;
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+

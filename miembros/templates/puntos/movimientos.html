@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block body%}
+  
+<table class="table table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Monto</th>
+        <th scope="col">Puntos</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Estado Civil</th>
+        <th scope="col">Nacionalidad</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for recibo in recibos %}
+      <tr>
+        <th scope="row"> {{recibo.pacienteid}}</th>
+        <td> {{recibo.fecha}}</td>
+        <td>{{recibo.usuarioid}}</td>
+        <td>{{recibo.pacienteid}}</td>
+        <td>{{recibo.tipo}}</td>
+        
+        <td>{{recibo.monto}}</td> 
+        <td>{{usuario.fechanac}}</td> 
+        <td>{{usuario.sexo}}</td> 
+        <td>{{usuario.estado_civil}}</td> 
+        <td>{{usuario.nacionalidad}}</td> 
+      </tr>
+    
+      {%endfor%}
+    </tbody>
+  </table>
+
+
+<script  src="">  </script>
+
+  <script src="{% static 'js/index.js' %}  " >
+      
+  </script>
+{%endblock%}

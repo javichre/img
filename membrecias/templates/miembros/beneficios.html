@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body%}
+<style>
+    thead th{
+        color: whitesmoke;
+    }
+    p{
+        text-align: center;
+        color: gray;
+    }
+
+    .col-lg-2 img{
+        width: 200px;
+        display: block;
+        margin: 0px auto;
+    }
+
+</style>
+
+<div class="row" data-aos="fade-left" data-aos-duration="3000">
+
+    <div class="col-lg-2">
+
+        <br><br> <br>
+        <p> <b>Punta Cana Village</b> </p>
+        <div class="col-lg-3 col-sm-12"> <a href="https://img.hospital/nueva-sucursal/" target="_blank"><img src="{% static 'img/village.jpg' %} " alt="" ></a> </div>
+    
+    </div>
+
+    <div class="col-lg-8">
+        <br>
+        <h2> Tabla de Beneficios para los Miembros de MEDIRED  </h2>
+        <hr>
+        <br>
+        <a href=" {% url 'home' %} "><i class="fa-solid fa-arrow-left-long"></i></a>
+        <br>
+        <table class="table table-sm">
+            <thead class="bg-info">
+                <tr>
+                    <th>Servicio</th>
+                    <th>Descripcion</th>
+                    <th>Cobertura</th>
+                    <th>Con Seguro</th>
+                    <th>Sin Seguro</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+    
+                <tr>
+                <td> Consultas de Telemedicina <i class="fa-solid fa-check"></i> </td>
+                <td> Medicos Generales </td>
+                <td> Total </td>
+                <td> No Aplica</td>
+                    <td> No Aplica</td>
+                </tr>
+    
+                <tr>
+                    <td> Especialidades Medicas <i class="fa-solid fa-check"></i> </td>
+                    <td> Medicos Especialistas </td>
+                    <td> Tarifa especial</td>
+                    <td> No Aplica</td>
+                    <td> No Aplica</td>
+                    
+                    </tr>
+    
+                    <tr>
+                        <td> Consultas Presenciales <i class="fa-solid fa-check"></i> </td>
+                        <td> Medico General </td>
+                        <td> Diferencia del Seguro </td>
+                        <td> No paga Diferencia</td>
+                        <td> Pago de 300</td>
+                       
+                        </tr>
+    
+                        <tr>
+                            <td> Analiticas <i class="fa-solid fa-check"></i> </td>
+                            <td> Estudios </td>
+                            <td> 15% del copago </td>
+                            <td> No paga Diferencia</td>
+                            <td> Pago de 50</td>
+                           
+                        </tr>
+    
+                        <tr>
+                            <td> Imagenes <i class="fa-solid fa-check"></i> </td>
+                            <td> Estudios </td>
+                            <td> 15% del copago </td>
+                            <td> No paga Diferencia</td>
+                            <td> Pago de 50</td>
+                           
+                        </tr>
+    
+                        <tr>
+                            <td> Endoscopía <i class="fa-solid fa-check"></i> </td>
+                            <td> Estudios </td>
+                            <td> 15% del copago </td>
+                            <td> No paga Diferencia</td>
+                            <td> Pago de 50</td>
+                        </tr>
+    
+                        <tr>
+                            <td> Cirugia <i class="fa-solid fa-check"></i> </td>
+                            <td> Consultas </td>
+                            <td> 0 copago </td>
+                            <td> No Aplica</td>
+                            <td> No Aplica</td>
+                        </tr>
+    
+                        <tr>
+                            <td> Cirugia <i class="fa-solid fa-check"></i> </td>
+                            <td> Procedimiento </td>
+                            <td> Financiamiento de Diferencia </td>
+                            <td> No Aplica</td>
+                            <td> No Aplica</td>
+                        </tr>
+    
+                        <tr>
+                            <td> Farmacia <i class="fa-solid fa-check"></i> </td>
+                            <td> Farmacia 347 </td>
+                            <td> 20% de descuento </td>
+                            <td> No Aplica</td>
+                            <td> No Aplica</td>
+                        </tr>
+    
+                        <tr>
+                            <td> Foodtruc <i class="fa-solid fa-check"></i> </td>
+                            <td> Camiones de Comida </td>
+                            <td> 5% de descuento </td>
+                            <td> No Aplica</td>
+                            <td> No Aplica</td>
+                        </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-lg-2">
+        <br><br> <br>
+        <p> <b>Pide tus Medicamentos</b> </p>
+        <div class="col-lg-3 col-sm-12"> <a href="https://wa.me/18096085565" target="_blank"><img src=" {% static 'img/delibery.jpg' %}" alt=""></a> </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
+{%endblock%}

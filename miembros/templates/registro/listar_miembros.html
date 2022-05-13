@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body%}
+
+<style>
+   th, td{
+        text-align: center;
+    }
+</style>
+
+<p>  </p>
+
+<p>  {{usuario.nombres}} </p>
+
+<p>  {{usuario.apellidos}} </p>
+
+<p>  {{usuario.documento}} </p>
+
+<p>  {{usuario.documento_responsable}} </p>
+
+<p>  {{usuario.fecha_nacimiento}} </p>
+
+<p>  {{usuario.sexo}} </p>
+
+<p>  {{usuario.asegurado}} </p>
+
+<p>  {{usuario.estado_civil}} </p>
+
+<p>  {{usuario.nacionalidad}} </p>
+
+
+
+
+
+
+  
+  <table class="table table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Pasaporte</th>
+        <th scope="col">Fecha Nacimiento</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Estado Civil</th>
+        <th scope="col">Nacionalidad</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+      <tr>
+        <th scope="row"> {{usuario.paciente_id}}</th>
+        <td> {{usuario.paciente.nombres}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellidos}}</td>
+        <td>{{usuario.cedula}}</td>
+        <td>{{usuario.pasaporte}}</td> 
+        <td>{{usuario.fechanac}}</td> 
+        <td>{{usuario.sexo}}</td> 
+        <td>{{usuario.estado_civil}}</td> 
+        <td>{{usuario.nacionalidad}}</td> 
+      </tr>
+    
+      {%endfor%}
+    </tbody>
+  </table>
+
+{%endblock%}

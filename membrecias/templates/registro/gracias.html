@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{%block body%}
+<style>
+    h2,
+    h5 {
+        color: gray;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 100px;
+    }
+
+    .btn {
+        background-color: #1A3066;
+        color: white;
+    }
+
+    .row {
+        margin-top: 100px;
+    }
+
+    h3 {
+        text-align: center;
+        margin-top: 50px;
+        color: gray;
+    }
+
+    p {
+        display: block;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    .fa-facebook-square {
+        color: #1A3066;
+        font-size: 30px;
+        border-radius: 15px;
+    }
+
+    .fa-youtube {
+        color: red;
+        font-size: 30px;
+    }
+
+    .fa-instagram-square {
+        color: #FFAFAF;
+        font-size: 30px;
+        border-radius: 30px;
+    }
+
+    .fa-whatsapp {
+        font-size: 30px;
+        color: #3DEF58;
+    }
+
+    .col-lg-3 img {
+        width: 300px;
+    }
+
+    .redes {
+        margin-bottom: 50pxx1;
+    }
+</style>
+
+<div class="container">
+
+    <h2> <b>Felicitaciones {{username}} </b> </h2>
+    <h5>Su Registro se ha Compleatdo Exitosamente, Ahora Puede Disfrutar de los Beneficios</h5>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4"><a href=" {% url 'register' %} " class="btn ">Registre otra Personas</a></div>
+        <div class="col-2"></div>
+        <div class="col-4"><a href="  {% url 'log' %} " class="btn ">Inicio de Sesion</a></div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-sm-12"> <a href="https://img.hospital/nueva-sucursal/" target="_blank"><img
+                    src="{% static 'img/village.jpg' %} " alt=""></a> </div>
+
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3"></div>
+
+        <div class="col-lg-3 col-sm-12"> <a href="https://wa.me/18096085565" target="_blank"><img
+                    src=" {% static 'img/delibery.jpg' %}" alt=""></a> </div>
+    </div>
+
+    <h3>Siguenos en nuestras redes sociales</h3>
+
+    <div class="row redes">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"><a href="https://www.facebook.com/imgpuntacana" target="_blank"><i
+                    class="fa-brands fa-facebook-square"></i></a> </div>
+        <div class="col-lg-2"><a href="https://www.youtube.com/channel/UCRbEJH59OT89jtDU8y-zzlQ" target="_blank"> <i
+                    class="fa-brands fa-youtube"></i></a> </div>
+        <div class="col-lg-2"> <a href="https://www.instagram.com/imghospital/?hl=es" target="_blank"> <i
+                    class="fa-brands fa-instagram-square"></i></a> </div>
+        <div class="col-lg-2">
+            <p> <a href="https://api.whatsapp.com/send?phone=18492616116&app=facebook&entry_point=page_cta&fbclid=IwAR2BkLjhGD33JF21DmzLBaP0ob-eOQZuXYX8mY2cFH8XCMU5D_3Bngc2b4w"
+                    target="_blank"> <i class="fa-brands fa-whatsapp"></i> </a>
+        </div>
+
+    </div>
+</div>
+{%endblock%}

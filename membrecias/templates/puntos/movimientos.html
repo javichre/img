@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body%}
+  <style>
+    input{
+      border: none;
+    }
+
+    .no-ver{
+      display: none;
+    }
+  </style>
+<table class="table table-sm" hidden>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Monto</th>
+        <th scope="col">Puntos</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+        {% for recibo in recibos %}
+      <tr>
+        <th scope="row"> {{recibo.reciboid}}</th>
+        <td> {{recibo.fecha}}</td>
+        <td>{{recibo.usuarioid}}</td>
+        <td>{{recibo.pacienteid}}</td>
+        <td>{{recibo.tipo}}</td>
+        <td> <input type="number" name="" id="monto" value="{{recibo.monto}}" readonly> </td>
+        <td> <input type="number" readonly id="acumulado" value=""> </td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+<div class="container">
+
+<br>
+<p><b> Total de Puntos Acumulados </b></p>
+  <table class="table table-sm">
+
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Paciente</th>              
+        <th scope="col">Puntos</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for recibo in reciboform %}
+      <tr>
+        <th scope="row"> {{recibo.reciboid}}</th>
+        <td> {{recibo.fecha | date:'d-m-Y' }}</td>
+        <td>{{recibo.pacienteid}}</td>
+        <td>{{paciente.cedula}}</td>
+        <td> <input type="number" readonly id="acumulado" value=""> </td> 
+      </tr>
+      {%endfor%}
+  </table>
+<br>
+
+<table class="table table-sm">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Metodo de Pago</th>
+      <th scope="col">Monto</th>              
+      <th scope="col">Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for recibo in recibos %}
+    <tr  class="  {% if recibo.nombre == 'Transferencia' %} no-ver {%endif%}  " >
+      <!--
+ <th scope="row"> {{recibo.reciboid}}</th>
+      -->
+      <td class="  {% if recibo.nombre == 'Transferencia' %} no-ver {%endif%}  "> {{recibo.reciboid}}</td>
+      <td class="  {% if recibo.nombre == 'Transferencia' %} no-ver {%endif%}  " > {{recibo.nombre}}</td>
+      <td>{{recibo.monto}}</td>
+      <td>{{recibo.puntos}}</td>
+   
+   
+      <td> <input type="number" readonly id="acumulado" value=""> </td> 
+    </tr>
+    {%endfor%}
+</table>
+  
+</div>
+
+<script  src="">  </script>
+
+  <script src="{% static 'js/index.js' %}  " >
+      
+  </script>
+
+  <script>
+    window.addEventListener('load', function man () {
+      
+      total = document.getElementById("monto").value
+      ganancia = 1
+
+      punto = total / 100 * ganancia
+
+      ht = document.getElementById('acumulado').value = punto    
+    })
+  
+   
+ 
+  </script>
+{%endblock%}
